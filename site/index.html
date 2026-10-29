@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI Quarterback Picks</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Model-priced picks for NFL, NBA, college football, NHL and MLB, with a public track record.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: one centered column like a printed bet sheet; picks are ticket rows, the record is a ledger. */
+:root {
+  --bg: #edf1f4;
+  --surface: #ffffff;
+  --ink: #0e1a26;
+  --muted: #586a7c;
+  --line: #cfd8e1;
+  --accent: #1f4fd8;
+  --accent-ink: #ffffff;
+  --edge: #a86a12;
+  --win: #157a3d;
+  --loss: #b42318;
+  --stripe: #dfe6ec;
+  --display: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+  --body: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0b131c; --surface: #121d29; --ink: #e5ecf2; --muted: #8fa2b4; --line: #243548;
+    --accent: #7096ff; --accent-ink: #08101a; --edge: #e2a641; --win: #4cc27b; --loss: #f0796e;
+    --stripe: #1b2938; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0b131c; --surface: #121d29; --ink: #e5ecf2; --muted: #8fa2b4; --line: #243548;
+  --accent: #7096ff; --accent-ink: #08101a; --edge: #e2a641; --win: #4cc27b; --loss: #f0796e;
+  --stripe: #1b2938; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 400 16px/1.55 var(--body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+a { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.wrap { max-width: 920px; margin: 0 auto; }
+
+header.top {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  padding-block: 18px; border-bottom: 1px solid var(--line);
+}
+.brand { font: 800 26px/1 var(--display); letter-spacing: .02em; text-transform: uppercase; color: var(--ink); text-decoration: none; }
+.brand span { color: var(--accent); }
+nav { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
+nav a { color: var(--muted); text-decoration: none; font-weight: 600; font-size: 14px; }
+nav a:hover { color: var(--ink); }
+.btn {
+  display: inline-block; background: var(--accent); color: var(--accent-ink); font-weight: 700;
+  text-decoration: none; padding: 10px 18px; border-radius: 6px; font-size: 15px;
+}
+nav .btn { color: var(--accent-ink); padding: 8px 14px; font-size: 14px; }
+.btn:hover { filter: brightness(1.08); }
+.btn.ghost { background: transparent; color: var(--accent); box-shadow: inset 0 0 0 1.5px var(--accent); }
+
+.hero { padding-block: 44px 28px; display: grid; gap: 28px; grid-template-columns: 1.2fr 1fr; align-items: center; }
+.hero h1 {
+  font: 800 clamp(40px, 7vw, 66px)/.95 var(--display); text-transform: uppercase; margin: 0 0 14px;
+  letter-spacing: .01em; text-wrap: balance;
+}
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero p { margin: 0 0 20px; color: var(--muted); max-width: 46ch; }
+.hero .ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.ticket {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px 18px 16px;
+  position: relative; min-width: 0;
+}
+.ticket::before, .ticket::after {
+  content: ""; position: absolute; top: 50%; width: 16px; height: 16px; border-radius: 50%;
+  background: var(--bg); border: 1px solid var(--line); transform: translateY(-50%);
+}
+.ticket::before { left: -9px; clip-path: inset(0 0 0 50%); }
+.ticket::after { right: -9px; clip-path: inset(0 50% 0 0); }
+.label { font: 500 11px/1.2 var(--mono); text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
+
+.gauge { margin-top: 14px; }
+.gauge .bar { position: relative; height: 10px; background: var(--stripe); border-radius: 5px; overflow: visible; }
+.gauge .fill { position: absolute; inset: 0 auto 0 0; background: var(--accent); border-radius: 5px; }
+.gauge .mark { position: absolute; top: -5px; bottom: -5px; width: 2px; background: var(--ink); }
+.gauge .legend { display: flex; justify-content: space-between; gap: 8px; margin-top: 8px; font: 500 12px/1.3 var(--mono); color: var(--muted); flex-wrap: wrap; }
+.gauge .legend b { color: var(--ink); font-weight: 500; }
+.gauge .legend .e { color: var(--edge); }
+
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+.stats > div { padding: 14px 16px; border-left: 1px solid var(--line); min-width: 0; }
+.stats > div:first-child { border-left: 0; }
+.stats .v { font: 800 34px/1 var(--display); font-variant-numeric: tabular-nums; margin-top: 4px; }
+.stats .v.pos { color: var(--win); }
+.stats .v.neg { color: var(--loss); }
+
+section { padding-block: 40px 8px; }
+h2 { font: 800 34px/1 var(--display); text-transform: uppercase; margin: 0 0 6px; letter-spacing: .01em; }
+.sub { color: var(--muted); margin: 0 0 20px; max-width: 62ch; }
+
+.tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.tab {
+  font: 600 13px/1 var(--body); padding: 9px 12px; border-radius: 6px; border: 1px solid var(--line);
+  background: var(--surface); color: var(--ink); cursor: pointer;
+}
+.tab .d { color: var(--muted); font-weight: 500; margin-left: 6px; font-family: var(--mono); font-size: 12px; }
+.tab[aria-selected="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.tab[aria-selected="true"] .d { color: inherit; opacity: .75; }
+
+.card { display: grid; gap: 10px; }
+.pick { display: grid; grid-template-columns: 1fr auto; gap: 6px 16px; }
+.pick h3 { margin: 4px 0 0; font: 700 20px/1.25 var(--body); min-width: 0; overflow-wrap: anywhere; }
+.pick .odds { font: 500 22px/1 var(--mono); align-self: start; padding-top: 18px; }
+.pick .why { grid-column: 1 / -1; margin: 6px 0 0; color: var(--muted); font-size: 14px; }
+.pick .gauge { grid-column: 1 / -1; }
+.free-tag { color: var(--win); }
+
+.locked {
+  display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center;
+  background: var(--surface); border: 1px dashed var(--line); border-radius: 8px; padding: 12px 14px;
+}
+.locked .meta { min-width: 0; }
+.locked .game { font-weight: 600; font-size: 14px; overflow-wrap: anywhere; }
+.locked .redact {
+  height: 10px; border-radius: 3px; margin-top: 6px; max-width: 260px;
+  background: repeating-linear-gradient(90deg, var(--stripe) 0 14px, transparent 14px 18px);
+}
+.lock-ic { width: 18px; height: 18px; color: var(--muted); }
+.chip { font: 500 11px/1 var(--mono); text-transform: uppercase; letter-spacing: .08em; padding: 5px 7px; border-radius: 4px; background: var(--stripe); color: var(--muted); white-space: nowrap; }
+.chip.pick { background: var(--accent); color: var(--accent-ink); display: inline; }
+.unlock { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 6px; padding: 14px 16px; border-radius: 8px; background: var(--stripe); }
+.unlock p { margin: 0; font-weight: 600; }
+
+.how { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.how div { min-width: 0; }
+.how b { display: block; font: 700 15px/1.3 var(--body); margin-bottom: 4px; }
+.how p { margin: 0; color: var(--muted); font-size: 14px; }
+.how .label { display: block; margin-bottom: 6px; }
+
+.spark { width: 100%; height: 120px; display: block; }
+.ledger-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); margin-top: 14px; }
+table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 14px; }
+th { text-align: left; font: 500 11px/1 var(--mono); text-transform: uppercase; letter-spacing: .08em; color: var(--muted); padding: 12px 12px; border-bottom: 1px solid var(--line); }
+td { padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+tr:last-child td { border-bottom: 0; }
+td.num { font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; text-align: right; }
+th.num { text-align: right; }
+td.sel { color: var(--muted); max-width: 380px; }
+td.sel strong { color: var(--ink); font-weight: 600; display: block; }
+.res { font: 700 12px/1 var(--mono); padding: 4px 7px; border-radius: 4px; color: var(--surface); }
+.res.W { background: var(--win); }
+.res.L { background: var(--loss); }
+.pos { color: var(--win); } .neg { color: var(--loss); }
+.filters { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 18px; }
+
+.plan { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
+.price { font: 800 64px/1 var(--display); }
+.price small { font: 500 16px var(--body); color: var(--muted); }
+.plan ul { margin: 14px 0 20px; padding-left: 18px; }
+.plan li { margin-bottom: 6px; }
+.faq details { border-bottom: 1px solid var(--line); padding-block: 12px; }
+.faq summary { font-weight: 600; cursor: pointer; }
+.faq p { margin: 8px 0 0; color: var(--muted); font-size: 15px; }
+
+footer { margin-top: 48px; padding-block: 24px 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+footer p { margin: 0 0 8px; max-width: 75ch; }
+footer strong { color: var(--ink); }
+
+@media (max-width: 720px) {
+  .hero, .plan, .how { grid-template-columns: 1fr; }
+  .hero { padding-block: 28px 16px; }
+  .stats .v { font-size: 28px; }
+  nav a:not(.btn) { display: none; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .gauge .fill { transition: width .6s ease; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#picks">AI Quarterback <span>Picks</span></a>
+    <nav>
+      <a href="#picks">Picks</a>
+      <a href="#record">Record</a>
+      <a href="#join">Pricing</a>
+      <a class="btn js-join" href="#join">Join</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div>
+      <h1>Every pick priced <em>against the book</em></h1>
+      <p>Game lines and player props for the NFL, NBA, college football, NHL and MLB. Each pick shows our model's win probability next to the sportsbook's no-vig price, so you can see the edge before you bet.</p>
+      <div class="ctas">
+        <a class="btn js-join" href="#join">Get the full card</a>
+        <a class="btn ghost" href="#record">See the record</a>
+      </div>
+    </div>
+    <div class="ticket" id="hero-ticket" aria-label="Featured free pick"></div>
+  </div>
+
+  <div class="stats" id="stats"></div>
+
+  <section id="picks">
+    <h2>Latest cards</h2>
+    <p class="sub">One pick from every card is free. Members get the full card, leans, and short write-ups before lines move.</p>
+    <div class="tabs" role="tablist" id="tabs"></div>
+    <div class="card" id="card"></div>
+  </section>
+
+  <section>
+    <div class="how">
+      <div><span class="label">Model %</span><b>Our win probability</b><p>Built from player projections, minutes, and team pace, blended with the market.</p></div>
+      <div><span class="label">Book %</span><b>The sportsbook's price, vig removed</b><p>What the posted odds imply once the house margin is stripped out of both sides.</p></div>
+      <div><span class="label">Edge</span><b>The gap between the two</b><p>We only name a pick when the model clears the book by a real margin, measured in percentage points.</p></div>
+    </div>
+  </section>
+
+  <section id="record">
+    <h2>Track record</h2>
+    <p class="sub" id="record-note"></p>
+    <svg class="spark" id="spark" role="img" aria-label="Cumulative units over time"></svg>
+    <div class="filters" id="filters"></div>
+    <div class="ledger-wrap">
+      <table>
+        <thead><tr><th>Date</th><th>Sport</th><th>Bet</th><th class="num">Odds</th><th>Result</th><th class="num">Units</th></tr></thead>
+        <tbody id="ledger"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="join">
+    <div class="plan">
+      <div class="ticket">
+        <span class="label">Membership</span>
+        <div class="price"><span class="js-price">$29</span><small> / month</small></div>
+        <ul>
+          <li>Every named pick and lean, every slate</li>
+          <li>NFL, NBA, college football, NHL and MLB</li>
+          <li>Model % and book % on every pick</li>
+          <li>Same-game parlay builds on big nights</li>
+          <li>Cancel anytime on Whop</li>
+        </ul>
+        <a class="btn js-join" href="#join">Join on Whop</a>
+      </div>
+      <div class="faq">
+        <h2>Questions</h2>
+        <details><summary>How do I get the picks after I join?</summary><p>Whop gives you access to the members area and our Discord, where each card is posted as soon as it is ready, usually a few hours before the first game.</p></details>
+        <details><summary>Which sportsbooks are the odds from?</summary><p>Mostly FanDuel, taken when the card is built. Lines move, so check your own book's price before you bet.</p></details>
+        <details><summary>How is the record counted?</summary><p>Every graded ticket counts, wins and losses, at 1 unit risked. Nothing is deleted after the fact.</p></details>
+        <details><summary>Can I cancel?</summary><p>Yes. Cancel any time from your Whop account and you keep access until the end of the month you paid for.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>For entertainment only. Not betting or financial advice.</strong> Past results do not guarantee future results. No pick is a sure thing, and you can lose money betting.</p>
+    <p>You must be 21 or older (18+ where allowed) and located where sports betting is legal. If you or someone you know has a gambling problem, call or text <strong>1-800-GAMBLER</strong>.</p>
+    <p id="updated"></p>
+  </footer>
+</div>
+
+<script src="data.js"></script>
+<script>
+// Site settings: swap these once the Whop product exists
+const SETTINGS = { whopUrl: "https://whop.com/", price: "$29" };
+
+const D = window.SITE_DATA;
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const fmtDate = (iso) => new Date(iso + "T12:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric" });
+const signed = (n) => (n > 0 ? "+" : "") + n.toFixed(2);
+const LOCK = '<svg class="lock-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2" fill="none"/><path d="M8 11V7a4 4 0 0 1 8 0v4" fill="none"/></svg>';
+
+document.querySelectorAll(".js-join").forEach((a) => { a.href = SETTINGS.whopUrl; a.target = "_blank"; a.rel = "noopener"; });
+document.querySelectorAll(".js-price").forEach((el) => (el.textContent = SETTINGS.price));
+
+function gauge(p) {
+  if (p.model_pct == null) return "";
+  const book = p.book_pct;
+  return `<div class="gauge"><div class="bar"><div class="fill" style="width:${p.model_pct}%"></div>${book != null ? `<div class="mark" style="left:${book}%"></div>` : ""}</div>
+    <div class="legend"><span>Model <b>${p.model_pct.toFixed(1)}%</b></span>${book != null ? `<span>Book <b>${book.toFixed(1)}%</b></span>` : ""}${p.edge != null ? `<span class="e">Edge +${p.edge.toFixed(1)} pts</span>` : ""}</div></div>`;
+}
+
+function freePick(p, slate) {
+  return `<div class="pick">
+    <div style="min-width:0"><span class="label"><span class="free-tag">Free pick</span> · ${esc(slate.sport)} · ${esc(p.game || fmtDate(slate.date))}${p.time ? " · " + esc(p.time) : ""}</span>
+    <h3>${esc(p.pick)}</h3></div>
+    <div class="odds">${esc(p.odds || "")}</div>
+    ${gauge(p)}
+    ${p.why ? `<p class="why">${esc(p.why)}</p>` : ""}
+  </div>`;
+}
+
+// Hero: the free pick with the biggest edge across recent cards
+(function hero() {
+  const all = D.slates.flatMap((s) => s.picks.filter((p) => !p.locked).map((p) => [p, s]));
+  all.sort((a, b) => (b[0].edge || 0) - (a[0].edge || 0));
+  if (all[0]) $("hero-ticket").innerHTML = freePick(all[0][0], all[0][1]);
+})();
+
+(function stats() {
+  const r = D.record;
+  const n = r.wins + r.losses;
+  $("stats").innerHTML = `
+    <div><span class="label">Record</span><div class="v">${r.wins}-${r.losses}</div></div>
+    <div><span class="label">Units</span><div class="v ${r.units >= 0 ? "pos" : "neg"}">${signed(r.units)}</div></div>
+    <div><span class="label">Graded tickets</span><div class="v">${n}</div></div>`;
+})();
+
+function renderSlate(i) {
+  const s = D.slates[i];
+  document.querySelectorAll(".tab").forEach((t, j) => t.setAttribute("aria-selected", String(j === i)));
+  const free = s.picks.filter((p) => !p.locked);
+  const locked = s.picks.filter((p) => p.locked);
+  $("card").innerHTML = free.map((p) => `<div class="ticket">${freePick(p, s)}</div>`).join("") +
+    locked.map((p) => `<div class="locked">${LOCK}<div class="meta"><div class="game">${esc(p.game || s.sport + " · " + fmtDate(s.date))}</div><div class="redact"></div></div><span class="chip">${esc(p.market)}${p.tier === "lean" ? " · lean" : ""}</span></div>`).join("") +
+    (locked.length ? `<div class="unlock"><p>${locked.length} more on this card for members</p><a class="btn" href="${SETTINGS.whopUrl}" target="_blank" rel="noopener">Unlock the card</a></div>` : "");
+}
+$("tabs").innerHTML = D.slates.map((s, i) => `<button class="tab" role="tab" id="tab-${i}" type="button">${esc(s.sport)}<span class="d">${fmtDate(s.date)}</span></button>`).join("");
+document.querySelectorAll(".tab").forEach((t, i) => t.addEventListener("click", () => renderSlate(i)));
+if (D.slates.length) renderSlate(0);
+
+// Record ledger + cumulative units chart
+let sportFilter = "All";
+function renderRecord() {
+  const r = D.record;
+  const bets = r.bets.filter((b) => sportFilter === "All" || b.sport === sportFilter);
+  $("ledger").innerHTML = bets.map((b) => `<tr>
+    <td class="num" style="text-align:left">${fmtDate(b.date)}</td><td>${esc(b.sport)}</td>
+    <td class="sel"><strong>${esc(b.type)} · ${esc(b.game)}</strong>${esc(b.selections)}</td>
+    <td class="num">${esc(b.odds)}</td><td><span class="res ${b.result}">${b.result}</span></td>
+    <td class="num ${b.units >= 0 ? "pos" : "neg"}">${signed(b.units)}</td></tr>`).join("");
+  document.querySelectorAll(".filters .tab").forEach((t) => t.setAttribute("aria-selected", String(t.dataset.s === sportFilter)));
+  drawSpark(bets.slice().reverse());
+}
+function drawSpark(bets) {
+  const svg = $("spark");
+  const W = 900, H = 120, P = 8;
+  let c = 0;
+  const pts = [0, ...bets.map((b) => (c += b.units))];
+  const lo = Math.min(0, ...pts), hi = Math.max(0, ...pts);
+  const x = (i) => P + (i / Math.max(1, pts.length - 1)) * (W - 2 * P);
+  const y = (v) => H - P - ((v - lo) / (hi - lo || 1)) * (H - 2 * P);
+  const line = pts.map((v, i) => `${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(" ");
+  const last = pts[pts.length - 1];
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  svg.setAttribute("preserveAspectRatio", "none");
+  svg.innerHTML = `
+    <line x1="${P}" x2="${W - P}" y1="${y(0)}" y2="${y(0)}" stroke="var(--line)" stroke-width="1" stroke-dasharray="4 4" vector-effect="non-scaling-stroke"/>
+    <polygon points="${x(0)},${y(0)} ${line} ${x(pts.length - 1)},${y(0)}" fill="var(--accent)" fill-opacity=".12"/>
+    <polyline points="${line}" fill="none" stroke="var(--accent)" stroke-width="2" vector-effect="non-scaling-stroke"/>
+    <circle cx="${x(pts.length - 1)}" cy="${y(last)}" r="4" fill="var(--accent)"/>`;
+}
+(function initRecord() {
+  const r = D.record;
+  const sports = ["All", ...new Set(r.bets.map((b) => b.sport))];
+  $("filters").innerHTML = sports.map((s) => `<button class="tab" type="button" data-s="${esc(s)}">${esc(s)}</button>`).join("");
+  document.querySelectorAll(".filters .tab").forEach((t) => t.addEventListener("click", () => { sportFilter = t.dataset.s; renderRecord(); }));
+  $("record-note").textContent = `${r.source}. Every graded ticket since ${fmtDate(r.bets[r.bets.length - 1].date)} is listed, wins and losses.`;
+  renderRecord();
+})();
+$("updated").textContent = "Picks and record updated " + new Date(D.generated).toLocaleString("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }) + ".";
+</script>
+</body>
+</html>

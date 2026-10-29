@@ -1,5 +1,5 @@
 window.SITE_DATA = {
- "generated": "2026-10-29T21:03+00:00",
+ "generated": "2026-10-29T23:53+00:00",
  "slates": [
   {
    "id": "nba_slate_2026-10-29",
@@ -135,10 +135,10 @@ window.SITE_DATA = {
      "game": "CAR @ GB",
      "pick": "Tucker Kraft (GB) Under 4.5 receptions",
      "odds": "-152",
-     "model_pct": 68.0,
+     "model_pct": 66.0,
      "book_pct": 56.3,
-     "edge": 11.7,
-     "why": "Projects 3.7 catches; Jacobs back and Golden expected to play spread the short targets. Holds with slate bias removed.",
+     "edge": 9.7,
+     "why": "Projects 3.8 catches; Jacobs back and Golden active spread the short targets. Holds with slate bias removed.",
      "time": "Thu 8:15p ET",
      "market": "Receptions",
      "locked": false

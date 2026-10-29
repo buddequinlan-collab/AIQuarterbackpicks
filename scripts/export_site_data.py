@@ -50,7 +50,9 @@ def fmt_odds(v):
 
 def market_of(pick):
     p = pick.lower()
-    for key, label in [("anytime", "Anytime TD/goal"), ("first td", "First scorer"),
+    for key, label in [("sgp", "Same-game parlay"), ("saves", "Saves"), ("sog", "Shots on goal"),
+                       ("reb+ast", "Rebounds + assists"), ("r+a", "Rebounds + assists"),
+                       ("anytime", "Anytime TD/goal"), ("first td", "First scorer"),
                        ("rec yds", "Receiving yards"), ("receiving", "Receiving yards"),
                        ("receptions", "Receptions"), ("rush", "Rushing yards"),
                        ("pass td", "Passing TDs"), ("pass yds", "Passing yards"),
@@ -84,7 +86,7 @@ def read_named(path):
         kind = str(get(r, "kind") or "Pick")
         if kind.lower() in SKIP_KINDS:
             continue
-        tier = "lean" if "lean" in kind.lower() else "pick"
+        tier = "sgp" if "sgp" in kind.lower() else "lean" if "lean" in kind.lower() else "pick"
         game = get(r, "game")
         if not game and "," in str(pick):  # CFB layout: "Pick text, Away @ Home 3:30p"
             pick, game = [s.strip() for s in str(pick).split(",", 1)]

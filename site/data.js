@@ -1,5 +1,5 @@
 window.SITE_DATA = {
- "generated": "2026-10-29T21:01+00:00",
+ "generated": "2026-10-29T21:03+00:00",
  "slates": [
   {
    "id": "nba_slate_2026-10-29",
@@ -23,7 +23,7 @@ window.SITE_DATA = {
      "locked": true,
      "tier": "pick",
      "game": "Grizzlies @ Trail Blazers",
-     "market": "Total",
+     "market": "Rebounds + assists",
      "time": null
     },
     {
@@ -31,13 +31,6 @@ window.SITE_DATA = {
      "tier": "pick",
      "game": "Grizzlies @ Trail Blazers",
      "market": "Threes",
-     "time": null
-    },
-    {
-     "locked": true,
-     "tier": "pick",
-     "game": "Grizzlies @ Trail Blazers",
-     "market": "Rebounds",
      "time": null
     },
     {
@@ -52,6 +45,13 @@ window.SITE_DATA = {
      "tier": "lean",
      "game": "Kings @ Pelicans",
      "market": "Points + rebounds",
+     "time": null
+    },
+    {
+     "locked": true,
+     "tier": "sgp",
+     "game": "Grizzlies @ Trail Blazers",
+     "market": "Same-game parlay",
      "time": null
     }
    ]
@@ -71,14 +71,14 @@ window.SITE_DATA = {
      "edge": 18.8,
      "why": "Carolina projects 3.8 goals on heavy shot volume; Greaves faces ~31 shots in the model",
      "time": null,
-     "market": "Total",
+     "market": "Saves",
      "locked": false
     },
     {
      "locked": true,
      "tier": "pick",
      "game": "OTT @ LAK",
-     "market": "Total",
+     "market": "Shots on goal",
      "time": null
     },
     {
@@ -92,14 +92,7 @@ window.SITE_DATA = {
      "locked": true,
      "tier": "pick",
      "game": "CHI @ DET",
-     "market": "Total",
-     "time": null
-    },
-    {
-     "locked": true,
-     "tier": "pick",
-     "game": "UTA @ PIT",
-     "market": "Points",
+     "market": "Shots on goal",
      "time": null
     },
     {
@@ -113,15 +106,84 @@ window.SITE_DATA = {
      "locked": true,
      "tier": "lean",
      "game": "WSH @ NSH",
-     "market": "Total",
+     "market": "Saves",
      "time": null
     },
     {
      "locked": true,
      "tier": "lean",
      "game": "UTA @ PIT",
-     "market": "Total",
+     "market": "Saves",
      "time": null
+    },
+    {
+     "locked": true,
+     "tier": "sgp",
+     "game": "UTA @ PIT",
+     "market": "Same-game parlay",
+     "time": null
+    }
+   ]
+  },
+  {
+   "id": "tnf_car_gb_2026-10-29",
+   "sport": "NFL",
+   "date": "2026-10-29",
+   "picks": [
+    {
+     "tier": "pick",
+     "game": "CAR @ GB",
+     "pick": "Tucker Kraft (GB) Under 4.5 receptions",
+     "odds": "-152",
+     "model_pct": 68.0,
+     "book_pct": 56.3,
+     "edge": 11.7,
+     "why": "Projects 3.7 catches; Jacobs back and Golden expected to play spread the short targets. Holds with slate bias removed.",
+     "time": "Thu 8:15p ET",
+     "market": "Receptions",
+     "locked": false
+    },
+    {
+     "locked": true,
+     "tier": "pick",
+     "game": "CAR @ GB",
+     "market": "Receiving yards",
+     "time": "Thu 8:15p ET"
+    },
+    {
+     "locked": true,
+     "tier": "pick",
+     "game": "CAR @ GB",
+     "market": "Receiving yards",
+     "time": "Thu 8:15p ET"
+    },
+    {
+     "locked": true,
+     "tier": "lean",
+     "game": "CAR @ GB",
+     "market": "Anytime TD/goal",
+     "time": "Thu 8:15p ET"
+    },
+    {
+     "locked": true,
+     "tier": "lean",
+     "game": "CAR @ GB",
+     "market": "Total",
+     "time": "Thu 8:15p ET"
+    },
+    {
+     "locked": true,
+     "tier": "lean",
+     "game": "CAR @ GB",
+     "market": "Moneyline",
+     "time": "Thu 8:15p ET"
+    },
+    {
+     "locked": true,
+     "tier": "sgp",
+     "game": "CAR @ GB",
+     "market": "Same-game parlay",
+     "time": "Thu 8:15p ET"
     }
    ]
   },
@@ -173,20 +235,6 @@ window.SITE_DATA = {
     },
     {
      "locked": true,
-     "tier": "pick",
-     "game": "Warriors @ Nuggets",
-     "market": "Rebounds",
-     "time": null
-    },
-    {
-     "locked": true,
-     "tier": "pick",
-     "game": "Pacers @ Bucks",
-     "market": "Rebounds",
-     "time": null
-    },
-    {
-     "locked": true,
      "tier": "lean",
      "game": "Grizzlies @ Jazz",
      "market": "Rebounds",
@@ -211,6 +259,20 @@ window.SITE_DATA = {
      "tier": "lean",
      "game": "Grizzlies @ Jazz",
      "market": "Spread",
+     "time": null
+    },
+    {
+     "locked": true,
+     "tier": "sgp",
+     "game": "Warriors @ Nuggets",
+     "market": "Same-game parlay",
+     "time": null
+    },
+    {
+     "locked": true,
+     "tier": "sgp",
+     "game": "Pacers @ Bucks",
+     "market": "Same-game parlay",
      "time": null
     }
    ]
@@ -263,20 +325,6 @@ window.SITE_DATA = {
     },
     {
      "locked": true,
-     "tier": "pick",
-     "game": "Magic @ Knicks",
-     "market": "Assists",
-     "time": null
-    },
-    {
-     "locked": true,
-     "tier": "pick",
-     "game": "Pistons @ 76ers",
-     "market": "Assists",
-     "time": null
-    },
-    {
-     "locked": true,
      "tier": "lean",
      "game": "Pistons @ 76ers",
      "market": "Assists",
@@ -301,6 +349,20 @@ window.SITE_DATA = {
      "tier": "lean",
      "game": "Clippers @ Thunder",
      "market": "Rebounds",
+     "time": null
+    },
+    {
+     "locked": true,
+     "tier": "sgp",
+     "game": "Magic @ Knicks",
+     "market": "Same-game parlay",
+     "time": null
+    },
+    {
+     "locked": true,
+     "tier": "sgp",
+     "game": "Pistons @ 76ers",
+     "market": "Same-game parlay",
      "time": null
     }
    ]
@@ -357,89 +419,6 @@ window.SITE_DATA = {
      "game": null,
      "market": "Spread",
      "time": "Sun 4:05p / 4:25p"
-    }
-   ]
-  },
-  {
-   "id": "cfb_slate_2026-10-24",
-   "sport": "College Football",
-   "date": "2026-10-24",
-   "picks": [
-    {
-     "tier": "pick",
-     "game": "Oklahoma @ Mississippi State 3:30p",
-     "pick": "John Mateer (OU) Under 24.5 rush yds",
-     "odds": "-114",
-     "model_pct": 64.0,
-     "book_pct": 50.0,
-     "edge": 14.0,
-     "why": "College rushing counts sacks: -6, 9 and 7 net yards over his last 3 games, 13.2 per game on the season.",
-     "time": null,
-     "market": "Rushing yards",
-     "locked": false
-    },
-    {
-     "locked": true,
-     "tier": "pick",
-     "game": "Houston @ Utah 10:15p",
-     "market": "Passing TDs",
-     "time": null
-    },
-    {
-     "locked": true,
-     "tier": "pick",
-     "game": "Tennessee @ South Carolina 3:30p",
-     "market": "Receiving yards",
-     "time": null
-    },
-    {
-     "locked": true,
-     "tier": "pick",
-     "game": "USC @ Wisconsin 7:30p",
-     "market": "Receiving yards",
-     "time": null
-    },
-    {
-     "locked": true,
-     "tier": "pick",
-     "game": "West Virginia @ TCU 12:00p",
-     "market": "Receptions",
-     "time": null
-    },
-    {
-     "locked": true,
-     "tier": "pick",
-     "game": "Texas A&M @ Alabama 3:30p",
-     "market": "Receptions",
-     "time": null
-    },
-    {
-     "locked": true,
-     "tier": "lean",
-     "game": "Virginia Tech @ Clemson 7:00p",
-     "market": "Passing TDs",
-     "time": null
-    },
-    {
-     "locked": true,
-     "tier": "lean",
-     "game": null,
-     "market": "Spread",
-     "time": null
-    },
-    {
-     "locked": true,
-     "tier": "lean",
-     "game": null,
-     "market": "Spread",
-     "time": null
-    },
-    {
-     "locked": true,
-     "tier": "lean",
-     "game": null,
-     "market": "Moneyline",
-     "time": null
     }
    ]
   }

@@ -1,6 +1,75 @@
 window.SITE_DATA = {
- "generated": "2026-10-29T23:53+00:00",
+ "generated": "2026-10-31T15:40+00:00",
  "slates": [
+  {
+   "id": "cfb_slate_2026-10-31",
+   "sport": "College Football",
+   "date": "2026-10-31",
+   "picks": [
+    {
+     "tier": "pick",
+     "game": "Georgia Tech @ Pittsburgh",
+     "pick": "Holden Geriner (PITT) Under 1.5 pass TDs",
+     "odds": "+136",
+     "model_pct": 58.6,
+     "book_pct": 39.6,
+     "edge": 19.0,
+     "why": "Starter since Heintschel got hurt; 0, 1, 1 TD passes in his starts and never more than 1 all year. Plus money.",
+     "time": "7:30p",
+     "market": "Passing TDs",
+     "locked": false
+    },
+    {
+     "locked": true,
+     "tier": "pick",
+     "game": "Missouri @ Arkansas",
+     "market": "Receptions",
+     "time": "7:45p"
+    },
+    {
+     "locked": true,
+     "tier": "pick",
+     "game": "Oregon State @ Fresno State",
+     "market": "Passing TDs",
+     "time": "11:00p"
+    },
+    {
+     "locked": true,
+     "tier": "pick",
+     "game": "Oregon State @ Fresno State",
+     "market": "Rushing yards",
+     "time": "11:00p"
+    },
+    {
+     "locked": true,
+     "tier": "pick",
+     "game": "Army @ Memphis",
+     "market": "Rushing yards",
+     "time": "8:00p"
+    },
+    {
+     "locked": true,
+     "tier": "lean",
+     "game": "Clemson @ Florida State",
+     "market": "Passing TDs",
+     "time": "7:00p"
+    },
+    {
+     "locked": true,
+     "tier": "lean",
+     "game": "Mississippi State @ Texas",
+     "market": "Spread",
+     "time": "7:30p"
+    },
+    {
+     "locked": true,
+     "tier": "lean",
+     "game": "App State @ Georgia Southern",
+     "market": "Spread",
+     "time": "6:30p"
+    }
+   ]
+  },
   {
    "id": "nba_slate_2026-10-29",
    "sport": "NBA",
@@ -364,61 +433,6 @@ window.SITE_DATA = {
      "game": "Pistons @ 76ers",
      "market": "Same-game parlay",
      "time": null
-    }
-   ]
-  },
-  {
-   "id": "nfl_slate_2026-10-25",
-   "sport": "NFL",
-   "date": "2026-10-25",
-   "picks": [
-    {
-     "tier": "pick",
-     "game": null,
-     "pick": "Kyren Williams (LAR) Over 3.5 receptions",
-     "odds": "-144",
-     "model_pct": 75.0,
-     "book_pct": 55.1,
-     "edge": 19.9,
-     "why": "30 catches in 6 games; Adams on IR. Carried over from Friday, price improved from -154.",
-     "time": "Sun 4:25p",
-     "market": "Receptions",
-     "locked": false
-    },
-    {
-     "locked": true,
-     "tier": "pick",
-     "game": null,
-     "market": "Receptions",
-     "time": "Sun 4:25p"
-    },
-    {
-     "locked": true,
-     "tier": "pick",
-     "game": null,
-     "market": "Rushing yards",
-     "time": "Sun 8:20p"
-    },
-    {
-     "locked": true,
-     "tier": "pick",
-     "game": null,
-     "market": "Anytime TD/goal",
-     "time": "Sun 4:25p"
-    },
-    {
-     "locked": true,
-     "tier": "lean",
-     "game": null,
-     "market": "Receptions",
-     "time": "Sun 4:25p"
-    },
-    {
-     "locked": true,
-     "tier": "lean",
-     "game": null,
-     "market": "Spread",
-     "time": "Sun 4:05p / 4:25p"
     }
    ]
   }

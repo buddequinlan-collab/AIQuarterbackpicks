@@ -1,5 +1,5 @@
 window.SITE_DATA = {
- "generated": "2026-10-31T15:40+00:00",
+ "generated": "2026-10-31T15:56+00:00",
  "slates": [
   {
    "id": "cfb_slate_2026-10-31",
@@ -8,65 +8,65 @@ window.SITE_DATA = {
    "picks": [
     {
      "tier": "pick",
-     "game": "Georgia Tech @ Pittsburgh",
-     "pick": "Holden Geriner (PITT) Under 1.5 pass TDs",
-     "odds": "+136",
-     "model_pct": 58.6,
-     "book_pct": 39.6,
-     "edge": 19.0,
-     "why": "Starter since Heintschel got hurt; 0, 1, 1 TD passes in his starts and never more than 1 all year. Plus money.",
+     "game": "Mississippi State @ Texas",
+     "pick": "Mississippi State +20.5",
+     "odds": "-114",
+     "model_pct": 56.3,
+     "book_pct": 50.9,
+     "edge": 5.4,
+     "why": "Projected Texas 35, Mississippi State 16. Model has Texas by 18, under the 20.5.",
      "time": "7:30p",
-     "market": "Passing TDs",
+     "market": "Spread",
      "locked": false
     },
     {
      "locked": true,
      "tier": "pick",
+     "game": "App State @ Georgia Southern",
+     "market": "Spread",
+     "time": "6:30p"
+    },
+    {
+     "locked": true,
+     "tier": "pick",
      "game": "Missouri @ Arkansas",
-     "market": "Receptions",
+     "market": "Spread",
      "time": "7:45p"
     },
     {
      "locked": true,
      "tier": "pick",
-     "game": "Oregon State @ Fresno State",
-     "market": "Passing TDs",
-     "time": "11:00p"
-    },
-    {
-     "locked": true,
-     "tier": "pick",
-     "game": "Oregon State @ Fresno State",
-     "market": "Rushing yards",
-     "time": "11:00p"
-    },
-    {
-     "locked": true,
-     "tier": "pick",
      "game": "Army @ Memphis",
-     "market": "Rushing yards",
+     "market": "Spread",
      "time": "8:00p"
     },
     {
      "locked": true,
-     "tier": "lean",
-     "game": "Clemson @ Florida State",
-     "market": "Passing TDs",
+     "tier": "pick",
+     "game": "Northern Illinois @ UNLV",
+     "market": "Spread",
+     "time": "10:30p"
+    },
+    {
+     "locked": true,
+     "tier": "pick",
+     "game": "Washington State @ San Diego State",
+     "market": "Total",
      "time": "7:00p"
     },
     {
      "locked": true,
      "tier": "lean",
-     "game": "Mississippi State @ Texas",
-     "market": "Spread",
-     "time": "7:30p"
+     "game": "Missouri @ Arkansas",
+     "market": "Moneyline",
+     "time": "7:45p"
     },
     {
      "locked": true,
      "tier": "lean",
-     "game": "App State @ Georgia Southern",
-     "market": "Spread",
-     "time": "6:30p"
+     "game": "Texas State @ Boise State",
+     "market": "Moneyline",
+     "time": "10:00p"
     }
    ]
   },

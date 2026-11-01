@@ -1,6 +1,75 @@
 window.SITE_DATA = {
- "generated": "2026-10-31T15:56+00:00",
+ "generated": "2026-11-01T21:11+00:00",
  "slates": [
+  {
+   "id": "nfl_late_2026-11-01",
+   "sport": "NFL",
+   "date": "2026-11-01",
+   "picks": [
+    {
+     "tier": "pick",
+     "game": "KC @ DEN",
+     "pick": "Kenneth Walker III (KC) Over 85.5 rushing yds",
+     "odds": "-113",
+     "model_pct": 69.8,
+     "book_pct": 50.0,
+     "edge": 19.8,
+     "why": "Averaging 117 rush yds on ~20 carries a game; model 111, blended 98.5. Holds with slate bias removed (+17.9).",
+     "time": "Sun 4:25p ET",
+     "market": "Rushing yards",
+     "locked": false
+    },
+    {
+     "locked": true,
+     "tier": "pick",
+     "game": "KC @ DEN",
+     "market": "Anytime TD/goal",
+     "time": "Sun 4:25p ET"
+    },
+    {
+     "locked": true,
+     "tier": "pick",
+     "game": "KC @ DEN",
+     "market": "Receiving yards",
+     "time": "Sun 4:25p ET"
+    },
+    {
+     "locked": true,
+     "tier": "pick",
+     "game": "NE @ MIA",
+     "market": "Rushing yards",
+     "time": "Sun 4:25p ET"
+    },
+    {
+     "locked": true,
+     "tier": "pick",
+     "game": "NE @ MIA",
+     "market": "Rushing yards",
+     "time": "Sun 4:25p ET"
+    },
+    {
+     "locked": true,
+     "tier": "lean",
+     "game": "NE @ MIA",
+     "market": "Total",
+     "time": "Sun 4:25p ET"
+    },
+    {
+     "locked": true,
+     "tier": "lean",
+     "game": "NE @ MIA",
+     "market": "Rushing yards",
+     "time": "Sun 4:25p ET"
+    },
+    {
+     "locked": true,
+     "tier": "lean",
+     "game": "KC @ DEN",
+     "market": "Moneyline",
+     "time": "Sun 4:25p ET"
+    }
+   ]
+  },
   {
    "id": "cfb_slate_2026-10-31",
    "sport": "College Football",
@@ -341,96 +410,6 @@ window.SITE_DATA = {
      "locked": true,
      "tier": "sgp",
      "game": "Pacers @ Bucks",
-     "market": "Same-game parlay",
-     "time": null
-    }
-   ]
-  },
-  {
-   "id": "nba_slate_2026-10-25",
-   "sport": "NBA",
-   "date": "2026-10-25",
-   "picks": [
-    {
-     "tier": "pick",
-     "game": "Magic @ Knicks",
-     "pick": "Franz Wagner assists under 4.5",
-     "odds": "+114",
-     "model_pct": 62.0,
-     "book_pct": 46.7,
-     "edge": 15.3,
-     "why": null,
-     "time": null,
-     "market": "Assists",
-     "locked": false
-    },
-    {
-     "locked": true,
-     "tier": "pick",
-     "game": "Magic @ Knicks",
-     "market": "Threes",
-     "time": null
-    },
-    {
-     "locked": true,
-     "tier": "pick",
-     "game": "Pacers @ Nets",
-     "market": "Assists",
-     "time": null
-    },
-    {
-     "locked": true,
-     "tier": "pick",
-     "game": "Magic @ Knicks",
-     "market": "Assists",
-     "time": null
-    },
-    {
-     "locked": true,
-     "tier": "pick",
-     "game": "Grizzlies @ Kings",
-     "market": "Rebounds",
-     "time": null
-    },
-    {
-     "locked": true,
-     "tier": "lean",
-     "game": "Pistons @ 76ers",
-     "market": "Assists",
-     "time": null
-    },
-    {
-     "locked": true,
-     "tier": "lean",
-     "game": "Magic @ Knicks",
-     "market": "Threes",
-     "time": null
-    },
-    {
-     "locked": true,
-     "tier": "lean",
-     "game": "Pistons @ 76ers",
-     "market": "Points",
-     "time": null
-    },
-    {
-     "locked": true,
-     "tier": "lean",
-     "game": "Clippers @ Thunder",
-     "market": "Rebounds",
-     "time": null
-    },
-    {
-     "locked": true,
-     "tier": "sgp",
-     "game": "Magic @ Knicks",
-     "market": "Same-game parlay",
-     "time": null
-    },
-    {
-     "locked": true,
-     "tier": "sgp",
-     "game": "Pistons @ 76ers",
      "market": "Same-game parlay",
      "time": null
     }

@@ -1,6 +1,68 @@
 window.SITE_DATA = {
- "generated": "2026-11-01T21:11+00:00",
+ "generated": "2026-11-03T01:14+00:00",
  "slates": [
+  {
+   "id": "mnf_chi_sea_2026-11-02",
+   "sport": "NFL",
+   "date": "2026-11-02",
+   "picks": [
+    {
+     "tier": "pick",
+     "game": "CHI @ SEA",
+     "pick": "Jaxon Smith-Njigba (SEA) Over 99.5 receiving yds",
+     "odds": "-113",
+     "model_pct": 68.8,
+     "book_pct": 50.0,
+     "edge": 18.8,
+     "why": "Averaging 124 yds on 11 targets a game; Shaheed inactive adds ~6% target share. Blended 112. Holds with slate bias removed (+15.8).",
+     "time": "Mon 8:15p ET",
+     "market": "Receiving yards",
+     "locked": false
+    },
+    {
+     "locked": true,
+     "tier": "pick",
+     "game": "CHI @ SEA",
+     "market": "Receptions",
+     "time": "Mon 8:15p ET"
+    },
+    {
+     "locked": true,
+     "tier": "pick",
+     "game": "CHI @ SEA",
+     "market": "Anytime TD/goal",
+     "time": "Mon 8:15p ET"
+    },
+    {
+     "locked": true,
+     "tier": "lean",
+     "game": "CHI @ SEA",
+     "market": "Receiving yards",
+     "time": "Mon 8:15p ET"
+    },
+    {
+     "locked": true,
+     "tier": "lean",
+     "game": "CHI @ SEA",
+     "market": "Total",
+     "time": "Mon 8:15p ET"
+    },
+    {
+     "locked": true,
+     "tier": "lean",
+     "game": "CHI @ SEA",
+     "market": "Total",
+     "time": "Mon 8:15p ET"
+    },
+    {
+     "locked": true,
+     "tier": "sgp",
+     "game": "CHI @ SEA",
+     "market": "Same-game parlay",
+     "time": "Mon 8:15p ET"
+    }
+   ]
+  },
   {
    "id": "nfl_late_2026-11-01",
    "sport": "NFL",
@@ -322,96 +384,6 @@ window.SITE_DATA = {
      "game": "CAR @ GB",
      "market": "Same-game parlay",
      "time": "Thu 8:15p ET"
-    }
-   ]
-  },
-  {
-   "id": "nba_slate_2026-10-26",
-   "sport": "NBA",
-   "date": "2026-10-26",
-   "picks": [
-    {
-     "tier": "pick",
-     "game": "Suns @ Thunder",
-     "pick": "Khaman Maluach pts+reb under 16.5",
-     "odds": "-118",
-     "model_pct": 66.3,
-     "book_pct": 54.1,
-     "edge": 12.2,
-     "why": null,
-     "time": null,
-     "market": "Points + rebounds",
-     "locked": false
-    },
-    {
-     "locked": true,
-     "tier": "pick",
-     "game": "Warriors @ Nuggets",
-     "market": "Rebounds",
-     "time": null
-    },
-    {
-     "locked": true,
-     "tier": "pick",
-     "game": "Suns @ Thunder",
-     "market": "Threes",
-     "time": null
-    },
-    {
-     "locked": true,
-     "tier": "pick",
-     "game": "Pacers @ Bucks",
-     "market": "Rebounds",
-     "time": null
-    },
-    {
-     "locked": true,
-     "tier": "pick",
-     "game": "Pacers @ Bucks",
-     "market": "Assists",
-     "time": null
-    },
-    {
-     "locked": true,
-     "tier": "lean",
-     "game": "Grizzlies @ Jazz",
-     "market": "Rebounds",
-     "time": null
-    },
-    {
-     "locked": true,
-     "tier": "lean",
-     "game": "Suns @ Thunder",
-     "market": "Rebounds",
-     "time": null
-    },
-    {
-     "locked": true,
-     "tier": "lean",
-     "game": "Warriors @ Nuggets",
-     "market": "Assists",
-     "time": null
-    },
-    {
-     "locked": true,
-     "tier": "lean",
-     "game": "Grizzlies @ Jazz",
-     "market": "Spread",
-     "time": null
-    },
-    {
-     "locked": true,
-     "tier": "sgp",
-     "game": "Warriors @ Nuggets",
-     "market": "Same-game parlay",
-     "time": null
-    },
-    {
-     "locked": true,
-     "tier": "sgp",
-     "game": "Pacers @ Bucks",
-     "market": "Same-game parlay",
-     "time": null
     }
    ]
   }

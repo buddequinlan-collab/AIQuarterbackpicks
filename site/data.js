@@ -1,6 +1,54 @@
 window.SITE_DATA = {
- "generated": "2026-11-03T01:14+00:00",
+ "generated": "2026-11-05T02:12+00:00",
  "slates": [
+  {
+   "id": "nba_slate_2026-11-04",
+   "sport": "NBA",
+   "date": "2026-11-04",
+   "picks": [
+    {
+     "tier": "pick",
+     "game": "Heat @ Clippers",
+     "pick": "Max Strus pts+reb over 14.5",
+     "odds": "-102",
+     "model_pct": 58.2,
+     "book_pct": 50.5,
+     "edge": 7.7,
+     "why": "Ingram, Beal and J. Miller out; model 11.4 pts + 5.4 reb in 23 min. Holds at FanDuel minutes. Small sample (13 games since 2025-26).",
+     "time": "10:30p ET",
+     "market": "Points + rebounds",
+     "locked": false
+    },
+    {
+     "locked": true,
+     "tier": "pick",
+     "game": "Mavericks @ Spurs",
+     "market": "Threes",
+     "time": "9:30p ET"
+    },
+    {
+     "locked": true,
+     "tier": "lean",
+     "game": "Heat @ Clippers",
+     "market": "Rebounds",
+     "time": "10:30p ET"
+    },
+    {
+     "locked": true,
+     "tier": "lean",
+     "game": "Lakers @ Kings",
+     "market": "Rebounds",
+     "time": "10:00p ET"
+    },
+    {
+     "locked": true,
+     "tier": "sgp",
+     "game": "Heat @ Clippers",
+     "market": "Same-game parlay",
+     "time": "10:30p ET"
+    }
+   ]
+  },
   {
    "id": "mnf_chi_sea_2026-11-02",
    "sport": "NFL",
@@ -322,68 +370,6 @@ window.SITE_DATA = {
      "game": "UTA @ PIT",
      "market": "Same-game parlay",
      "time": null
-    }
-   ]
-  },
-  {
-   "id": "tnf_car_gb_2026-10-29",
-   "sport": "NFL",
-   "date": "2026-10-29",
-   "picks": [
-    {
-     "tier": "pick",
-     "game": "CAR @ GB",
-     "pick": "Tucker Kraft (GB) Under 4.5 receptions",
-     "odds": "-152",
-     "model_pct": 66.0,
-     "book_pct": 56.3,
-     "edge": 9.7,
-     "why": "Projects 3.8 catches; Jacobs back and Golden active spread the short targets. Holds with slate bias removed.",
-     "time": "Thu 8:15p ET",
-     "market": "Receptions",
-     "locked": false
-    },
-    {
-     "locked": true,
-     "tier": "pick",
-     "game": "CAR @ GB",
-     "market": "Receiving yards",
-     "time": "Thu 8:15p ET"
-    },
-    {
-     "locked": true,
-     "tier": "pick",
-     "game": "CAR @ GB",
-     "market": "Receiving yards",
-     "time": "Thu 8:15p ET"
-    },
-    {
-     "locked": true,
-     "tier": "lean",
-     "game": "CAR @ GB",
-     "market": "Anytime TD/goal",
-     "time": "Thu 8:15p ET"
-    },
-    {
-     "locked": true,
-     "tier": "lean",
-     "game": "CAR @ GB",
-     "market": "Total",
-     "time": "Thu 8:15p ET"
-    },
-    {
-     "locked": true,
-     "tier": "lean",
-     "game": "CAR @ GB",
-     "market": "Moneyline",
-     "time": "Thu 8:15p ET"
-    },
-    {
-     "locked": true,
-     "tier": "sgp",
-     "game": "CAR @ GB",
-     "market": "Same-game parlay",
-     "time": "Thu 8:15p ET"
     }
    ]
   }

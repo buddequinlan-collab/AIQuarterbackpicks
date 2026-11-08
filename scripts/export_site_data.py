@@ -29,7 +29,7 @@ COLS = {
     "why": ["Why", "Why / risk"],
     "time": ["Kickoff (ET)", "Start"],
 }
-SKIP_KINDS = {"pass", "early"}
+SKIP_KINDS = {"pass", "early", "projection"}
 
 
 def pct(v):

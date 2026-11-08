@@ -1,6 +1,68 @@
 window.SITE_DATA = {
- "generated": "2026-11-05T02:12+00:00",
+ "generated": "2026-11-08T21:25+00:00",
  "slates": [
+  {
+   "id": "nfl_gb_ne_2026-11-08",
+   "sport": "NFL",
+   "date": "2026-11-08",
+   "picks": [
+    {
+     "tier": "pick",
+     "game": "GB @ NE",
+     "pick": "Josh Jacobs (GB) Over 3.5 receptions",
+     "odds": "-102",
+     "model_pct": 56.3,
+     "book_pct": 47.2,
+     "edge": 9.1,
+     "why": "5.5 catches on 6.5 targets a game since returning in Week 7; MarShawn Lloyd inactive. Holds with slate bias removed (+11.4).",
+     "time": "Sun 4:25p ET",
+     "market": "Receptions",
+     "locked": false
+    },
+    {
+     "locked": true,
+     "tier": "pick",
+     "game": "GB @ NE",
+     "market": "Receiving yards",
+     "time": "Sun 4:25p ET"
+    },
+    {
+     "locked": true,
+     "tier": "pick",
+     "game": "GB @ NE",
+     "market": "Anytime TD/goal",
+     "time": "Sun 4:25p ET"
+    },
+    {
+     "locked": true,
+     "tier": "pick",
+     "game": "GB @ NE",
+     "market": "Rushing yards",
+     "time": "Sun 4:25p ET"
+    },
+    {
+     "locked": true,
+     "tier": "lean",
+     "game": "GB @ NE",
+     "market": "Receiving yards",
+     "time": "Sun 4:25p ET"
+    },
+    {
+     "locked": true,
+     "tier": "lean",
+     "game": "GB @ NE",
+     "market": "Spread",
+     "time": "Sun 4:25p ET"
+    },
+    {
+     "locked": true,
+     "tier": "sgp",
+     "game": "GB @ NE",
+     "market": "Same-game parlay",
+     "time": "Sun 4:25p ET"
+    }
+   ]
+  },
   {
    "id": "nba_slate_2026-11-04",
    "sport": "NBA",
@@ -299,75 +361,6 @@ window.SITE_DATA = {
      "locked": true,
      "tier": "sgp",
      "game": "Grizzlies @ Trail Blazers",
-     "market": "Same-game parlay",
-     "time": null
-    }
-   ]
-  },
-  {
-   "id": "nhl_slate_2026-10-29",
-   "sport": "NHL",
-   "date": "2026-10-29",
-   "picks": [
-    {
-     "tier": "pick",
-     "game": "CBJ @ CAR",
-     "pick": "Jet Greaves saves over 26.5",
-     "odds": "-118",
-     "model_pct": 72.9,
-     "book_pct": 54.1,
-     "edge": 18.8,
-     "why": "Carolina projects 3.8 goals on heavy shot volume; Greaves faces ~31 shots in the model",
-     "time": null,
-     "market": "Saves",
-     "locked": false
-    },
-    {
-     "locked": true,
-     "tier": "pick",
-     "game": "OTT @ LAK",
-     "market": "Shots on goal",
-     "time": null
-    },
-    {
-     "locked": true,
-     "tier": "pick",
-     "game": "UTA @ PIT",
-     "market": "Points",
-     "time": null
-    },
-    {
-     "locked": true,
-     "tier": "pick",
-     "game": "CHI @ DET",
-     "market": "Shots on goal",
-     "time": null
-    },
-    {
-     "locked": true,
-     "tier": "lean",
-     "game": "WSH @ NSH",
-     "market": "Anytime TD/goal",
-     "time": null
-    },
-    {
-     "locked": true,
-     "tier": "lean",
-     "game": "WSH @ NSH",
-     "market": "Saves",
-     "time": null
-    },
-    {
-     "locked": true,
-     "tier": "lean",
-     "game": "UTA @ PIT",
-     "market": "Saves",
-     "time": null
-    },
-    {
-     "locked": true,
-     "tier": "sgp",
-     "game": "UTA @ PIT",
      "market": "Same-game parlay",
      "time": null
     }

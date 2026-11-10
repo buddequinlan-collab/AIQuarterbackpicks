@@ -1,6 +1,68 @@
 window.SITE_DATA = {
- "generated": "2026-11-08T21:25+00:00",
+ "generated": "2026-11-10T00:57+00:00",
  "slates": [
+  {
+   "id": "mnf_buf_min_2026-11-09",
+   "sport": "NFL",
+   "date": "2026-11-09",
+   "picks": [
+    {
+     "tier": "pick",
+     "game": "BUF @ MIN",
+     "pick": "Justin Jefferson (MIN) Under 6.5 receptions",
+     "odds": "-122",
+     "model_pct": 67.8,
+     "book_pct": 51.4,
+     "edge": 16.4,
+     "why": "Blended mean 5.7 catches even after adding Jennings' targets; holds with slate bias removed (+16.7).",
+     "time": "Mon 8:15p ET",
+     "market": "Receptions",
+     "locked": false
+    },
+    {
+     "locked": true,
+     "tier": "pick",
+     "game": "BUF @ MIN",
+     "market": "Anytime TD/goal",
+     "time": "Mon 8:15p ET"
+    },
+    {
+     "locked": true,
+     "tier": "pick",
+     "game": "BUF @ MIN",
+     "market": "Spread",
+     "time": "Mon 8:15p ET"
+    },
+    {
+     "locked": true,
+     "tier": "lean",
+     "game": "BUF @ MIN",
+     "market": "Receiving yards",
+     "time": "Mon 8:15p ET"
+    },
+    {
+     "locked": true,
+     "tier": "lean",
+     "game": "BUF @ MIN",
+     "market": "Receiving yards",
+     "time": "Mon 8:15p ET"
+    },
+    {
+     "locked": true,
+     "tier": "lean",
+     "game": "BUF @ MIN",
+     "market": "Total",
+     "time": "Mon 8:15p ET"
+    },
+    {
+     "locked": true,
+     "tier": "sgp",
+     "game": "BUF @ MIN",
+     "market": "Same-game parlay",
+     "time": "Mon 8:15p ET"
+    }
+   ]
+  },
   {
    "id": "nfl_gb_ne_2026-11-08",
    "sport": "NFL",
@@ -308,61 +370,6 @@ window.SITE_DATA = {
      "game": "Texas State @ Boise State",
      "market": "Moneyline",
      "time": "10:00p"
-    }
-   ]
-  },
-  {
-   "id": "nba_slate_2026-10-29",
-   "sport": "NBA",
-   "date": "2026-10-29",
-   "picks": [
-    {
-     "tier": "pick",
-     "game": "Grizzlies @ Trail Blazers",
-     "pick": "Jaylen Wells rebounds over 3.5",
-     "odds": "+146",
-     "model_pct": 46.9,
-     "book_pct": 40.7,
-     "edge": 6.2,
-     "why": null,
-     "time": null,
-     "market": "Rebounds",
-     "locked": false
-    },
-    {
-     "locked": true,
-     "tier": "pick",
-     "game": "Grizzlies @ Trail Blazers",
-     "market": "Rebounds + assists",
-     "time": null
-    },
-    {
-     "locked": true,
-     "tier": "pick",
-     "game": "Grizzlies @ Trail Blazers",
-     "market": "Threes",
-     "time": null
-    },
-    {
-     "locked": true,
-     "tier": "lean",
-     "game": "Kings @ Pelicans",
-     "market": "Rebounds",
-     "time": null
-    },
-    {
-     "locked": true,
-     "tier": "lean",
-     "game": "Kings @ Pelicans",
-     "market": "Points + rebounds",
-     "time": null
-    },
-    {
-     "locked": true,
-     "tier": "sgp",
-     "game": "Grizzlies @ Trail Blazers",
-     "market": "Same-game parlay",
-     "time": null
     }
    ]
   }
